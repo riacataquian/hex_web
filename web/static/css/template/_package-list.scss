@@ -49,47 +49,57 @@
   padding: 40px 20px 10px 20px;
 }
 
-.package-list {
-  padding: 20px 0;
-  ul {
+.package-list { padding: 20px 0; }
+
+.package-list > .list {
+  & {
     list-style: none;
     padding: 0;
-    li {
-      padding: 18px 18px;
-      &:nth-child(even) {
-        background: #f4f4f4;
-      }
-      a {
-        color: #aa2c3f;
-        @include font-size(26 , $base-line-height);
-        display: inline-block;
-      }
-      .version {
-        @include font-size(18 , $base-line-height);
-        color: #5c676d;
-        font-weight: 300;
-      }
-      p {
-        padding: 10px 0 0 0;
-        @include font-size(14 , $base-line-height);
-        font-weight: 300;
-        line-height: 16px;
-        margin: 0;
-      }
-      .downloads-info {
-        float: right;
-        color: #5c676d;
-        font-weight: 300;
-        @include font-size(18 , $base-line-height);
-        text-align: right;
-        .download-count {
-          color: #5c676d;
-          font-weight: bold;
-          display: inline-block;
-          padding: 0 0 10px 0;
-        }
-      }
-    }
+  }
+}
+
+.package-list > .list > .item {
+  & { padding: 18px; }
+
+  > .name {
+    @include font-size(26 , $base-line-height);
+    color: $color-red;
+    display: inline-block;
+  }
+
+  > .version {
+    @include font-size(18 , $base-line-height);
+    font-weight: 300;
+  }
+
+  > .description {
+    @include font-size(14 , $base-line-height);
+    padding: 10px 0 0 0;
+    font-weight: 300;
+    line-height: 16px;
+    margin: 0;
+  }
+}
+
+.package-list .downloads-info {
+  & {
+    @include font-size(18, $base-line-height);
+    color: $text-grey;
+    float: right;
+    font-weight: 300;
+    text-align: right;
+  }
+
+  > .count {
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 0 10px 0;
+  }
+}
+
+.package-list > .list > .item {
+  @include general-mobile {
+    > .name { @include font-size(22 , $base-line-height); }
   }
 }
 

@@ -72,15 +72,16 @@
 <div class="clearfix"></div>
 
 <div class="package-list">
-  <ul>
+  <ul class="list">
     <%= for package <- @packages do %>
-    <li>
+    <li class="item">
       <div class="downloads-info">
-        <span class="download-count"><%= human_number_space(@downloads[package.id] || 0) %></span> <br>
-        downloads
+        <span class="count"><%= human_number_space(@downloads[package.id] || 0) %></span>
+        <p>downloads</p>
       </div>
-      <a href="<%= package_path(HexWeb.Endpoint, :show, package) %>"><%= package.name %></a> <span class="version"><%= package.latest_version %></span>
-      <p><%= text_length(package.meta.description, 140) %></p>
+      <a class="name" href="<%= package_path(HexWeb.Endpoint, :show, package) %>"><%= package.name %></a>
+      <span class="version"><%= package.latest_version %></span>
+      <p class="description"><%= text_length(package.meta.description, 140) %></p>
     </li>
     <% end %>
   </ul>

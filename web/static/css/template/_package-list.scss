@@ -59,7 +59,16 @@
 }
 
 .package-list > .list > .item {
-  & { padding: 18px; }
+  & {
+    @include display-flex;
+    padding: 18px;
+  }
+}
+
+.package-list .package-info {
+  & {
+    width: 80%;
+  }
 
   > .name {
     @include font-size(26 , $base-line-height);
@@ -81,13 +90,19 @@
   }
 }
 
+.package-list .package-info {
+  @include general-mobile {
+    > .name { @include font-size(22 , $base-line-height); }
+  }
+}
+
 .package-list .downloads-info {
   & {
     @include font-size(18, $base-line-height);
     color: $text-grey;
-    float: right;
     font-weight: 300;
     text-align: right;
+    width: 20%;
   }
 
   > .count {
@@ -97,9 +112,11 @@
   }
 }
 
-.package-list > .list > .item {
+.package-list .downloads-info {
   @include general-mobile {
-    > .name { @include font-size(22 , $base-line-height); }
+    > .text {
+      font-size: 1.4rem;
+    }
   }
 }
 

@@ -41,3 +41,14 @@
 	   clear: both;
 	}
 }
+
+/*********************************************************************
+* Cross-browser supports
+*********************************************************************/
+@mixin display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -flex;
+}

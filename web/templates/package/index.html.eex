@@ -77,11 +77,13 @@
     <li class="item">
       <div class="downloads-info">
         <span class="count"><%= human_number_space(@downloads[package.id] || 0) %></span>
-        <p>downloads</p>
+        <p class="text">downloads</p>
       </div>
-      <a class="name" href="<%= package_path(HexWeb.Endpoint, :show, package) %>"><%= package.name %></a>
-      <span class="version"><%= package.latest_version %></span>
-      <p class="description"><%= text_length(package.meta.description, 140) %></p>
+      <div class="downloads-info">
+        <a class="name" href="<%= package_path(HexWeb.Endpoint, :show, package) %>"><%= package.name %></a>
+        <span class="version"><%= package.latest_version %></span>
+        <p class="description"><%= text_length(package.meta.description, 140) %></p>
+      </div>
     </li>
     <% end %>
   </ul>
